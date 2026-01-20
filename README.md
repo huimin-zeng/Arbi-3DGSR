@@ -33,7 +33,7 @@ To tackle these issues, we build an integrated framework that incorporates **sca
 
 - **2026/1/19**: We released [code](https://github.com/huimin-zeng/Arbi-3DGSR) and [checkpoints](https://drive.google.com/drive/folders/17VLVogpdliNVbPu5QOZaZsPDyqPlqsWD?usp=sharing) for this project.
 
-- **2026/1/16**: We built a webpage for this project. Check out the [project page](https://huimin-zeng.github.io/3DASR/) for interactive comparisons!
+- **2026/1/16**: Check out the [project page](https://huimin-zeng.github.io/3DASR/) for interactive comparisons!
 
 - **2025/11/15**: Our Arbi-3DGSR was accepted to **AAAI 2026**.
 
@@ -54,7 +54,8 @@ To tackle these issues, we build an integrated framework that incorporates **sca
 We provide a Docker image environment for easy setup:
 
 ```bash
-sudo docker run --gpus all -it -v /mnt/nvme1/huimin:/mnt/nvme1/huimin -v /home/public/huimin:/home/public/huimin --shm-size 64g zeldam1/zhm_docker:zhm-py310-torch21 /bin/bash
+docker pull zeldam1/zhm_docker:zhm-py310-torch21
+docker run --gpus all -it -v /workdir:/workdir  --shm-size 64g zeldam1/zhm_docker:zhm-py310-torch21 /bin/bash
 
 cd Arbi-3DGSR
 
@@ -75,8 +76,6 @@ conda activate Arbi-3DGSR
 # Install PyTorch with CUDA 12.1
 pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu121
 
-# Install torch-scatter
-pip install torch-scatter==2.1.2+pt21cu121 -f https://data.pyg.org/whl/torch-2.1.0+cu121.html
 
 # Install other dependencies
 pip install pytorch-lightning==1.4.2 torchmetrics==0.6.0 open-clip-torch==2.0.2
@@ -118,12 +117,27 @@ data/
 ```
 
 **Note:** 
-- To create multi-resolution datasets, you can use image downsampling scripts to generate `images_x2`, `images_x4`, `images_x8`, etc., from the original `images/` folder.
+- To create multi-resolution datasets, you can use image downsampling scripts to generate `images_x2`, `images_x4`, `images_x8` from the original `images/` folder.
 
 - Non-integer scale folders (`images_x8_3.5/`, `images_x8_5.7/`) are optional but recommended for arbitrary-scale evaluation
 
 
 ## Quick Start
+Check out the scripts in `script/` folder, all scripts support the following flags:
+
+- `--train`: Run training only
+- `--render`: Run rendering only  
+- `--eval`: Run evaluation only
+- No flags: Run all (train, render, eval)
+
+**Examples:**
+```bash
+bash script/db.sh --train    # Training only
+bash script/db.sh --render   # Rendering only
+bash script/db.sh --eval     # Evaluation only
+bash script/db.sh            # All steps
+```
+
 
 ### Training
 
@@ -188,22 +202,6 @@ bash script/db.sh --eval
 
 
 
-## Scripts Usage
-
-All scripts support the following flags:
-
-- `--train`: Run training only
-- `--render`: Run rendering only  
-- `--eval`: Run evaluation only
-- No flags: Run all (train, render, eval)
-
-**Examples:**
-```bash
-bash script/db.sh --train    # Training only
-bash script/db.sh --render   # Rendering only
-bash script/db.sh --eval     # Evaluation only
-bash script/db.sh            # All steps
-```
 
 
 ## Citation
