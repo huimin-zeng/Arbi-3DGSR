@@ -1,4 +1,8 @@
+<div align="center">
+
 # Arbitrary-Scale 3D Gaussian Super-Resolution
+
+</div>
 
 <div align="center">
 
