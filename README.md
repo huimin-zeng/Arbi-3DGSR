@@ -25,7 +25,11 @@ To tackle these issues, we build an integrated framework that incorporates **sca
 - ✅ Real-time rendering at high resolutions (85 FPS at 1080p)
 - ✅ Significant quality improvement (6.59 dB PSNR gain over vanilla 3DGS)
 
+<div align="center">
+
 <img width="1000" alt="teaser" src='assets/teaser.png'>
+
+</div>
 
 
 
@@ -130,14 +134,6 @@ Check out the scripts in `script/` folder, all scripts support the following fla
 - `--eval`: Run evaluation only
 - No flags: Run all (train, render, eval)
 
-**Examples:**
-```bash
-bash script/db.sh --train    # Training only
-bash script/db.sh --render   # Rendering only
-bash script/db.sh --eval     # Evaluation only
-bash script/db.sh            # All steps
-```
-
 
 ### Training
 
@@ -206,7 +202,7 @@ bash script/db.sh --eval
 
 ## Citation
 
-If you find this work useful, please cite our paper:
+If you find this work useful, please give us a star 🌟 and consider citing our paper ❤️:
 
 ```bibtex
 @article{zeng2025arbitrary,
