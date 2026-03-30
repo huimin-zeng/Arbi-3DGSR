@@ -8,7 +8,7 @@
 
 **AAAI 2026**
 
-<a href="https://huimin-zeng.github.io/3DASR/assets/paper.pdf"><img src="https://img.shields.io/badge/Paper-PDF-red"></a> 
+<a href="https://ojs.aaai.org/index.php/AAAI/article/view/38222"><img src="https://img.shields.io/badge/Paper-PDF-red"></a> 
 <a href="https://www.arxiv.org/abs/2508.16467"><img src="https://img.shields.io/badge/arXiv-2508.16467-b31b1b"></a> 
 <a href="https://huimin-zeng.github.io/3DASR/"><img src="https://img.shields.io/badge/Project-Page-blue"></a>
 <a href="https://github.com/huimin-zeng/Arbi-3DGSR/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
@@ -209,11 +209,14 @@ bash script/db.sh --eval
 If you find this work useful, please give us a star 🌟 and consider citing our paper ❤️:
 
 ```bibtex
-@article{zeng2025arbitrary,
+@inproceedings{zeng2026arbitrary,
   title={Arbitrary-Scale 3D Gaussian Super-Resolution},
   author={Zeng, Huimin and Bai, Yue and Fu, Yun},
-  journal={arXiv preprint arXiv:2508.16467},
-  year={2025}
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={40},
+  number={15},
+  pages={12304--12312},
+  year={2026}
 }
 ```
 
