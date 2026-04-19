@@ -25,7 +25,7 @@ from models.network_swinir import SwinIR as net
 from tqdm import tqdm
 import wandb
 from utils.image_utils import psnr
-from train import prepare_output_and_logger,training_report,create_offset_gt
+from train import prepare_output_and_logger,training_report
 from taming.modules.losses.lpips import LPIPS
 from argparse import ArgumentParser, Namespace
 from arguments import ModelParams, PipelineParams, OptimizationParams
